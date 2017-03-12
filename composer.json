@@ -1,9 +1,12 @@
 {
   "name": "api-clients/middleware-basic-authorization",
-  "homepage": "https://php-api-clients.org/clients/travis/",
+  "homepage": "https://php-api-clients.org/middlewares/basic-authorization/",
   "description": "Basic authorization middleware",
   "license": "MIT",
   "authors": [
+    {
+      "name": "Jaap van Otterdijk"
+    },
     {
       "name": "Cees-Jan Kiewiet",
       "email": "ceesjank@gmail.com"
@@ -14,7 +17,7 @@
     "api-clients/middleware": "^1.0"
   },
   "require-dev": {
-    "api-clients/test-utilities": "^2.0",
+    "api-clients/test-utilities": "^3.0.1",
     "ringcentral/psr7": "^1.2"
   },
   "autoload": {
