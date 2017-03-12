@@ -7,6 +7,17 @@
 [![License](https://poser.pugx.org/api-clients/middleware-basic-authorization/license.png)](https://packagist.org/packages/api-clients/middleware-basic-authorization)
 [![PHP 7 ready](http://php7ready.timesplinter.ch/php-api-clients/middleware-basic-authorization/badge.svg)](https://travis-ci.org/php-api-clients/middleware-basic-authorization)
 
+# Installation
+
+To install via [Composer](http://getcomposer.org/), use the command below, it will automatically detect the latest version and bind it with `^`.
+
+```
+composer require api-clients/middleware-basic-authorization 
+```
+# Usage
+
+[See the transport package how to use this middleware.](https://github.com/php-api-clients/transport#middleware)
+
 # License
 
 The MIT License (MIT)
