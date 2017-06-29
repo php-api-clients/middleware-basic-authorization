@@ -2,7 +2,6 @@
 
 namespace ApiClients\Middleware\BasicAuthorization;
 
-use ApiClients\Foundation\Middleware\DefaultPriorityTrait;
 use ApiClients\Foundation\Middleware\ErrorTrait;
 use ApiClients\Foundation\Middleware\MiddlewareInterface;
 use ApiClients\Foundation\Middleware\PostTrait;
@@ -15,7 +14,6 @@ use function React\Promise\resolve;
  */
 final class BasicAuthorizationHeaderMiddleware implements MiddlewareInterface
 {
-    use DefaultPriorityTrait;
     use PostTrait;
     use ErrorTrait;
 
@@ -24,8 +22,11 @@ final class BasicAuthorizationHeaderMiddleware implements MiddlewareInterface
      * @param array $options
      * @return CancellablePromiseInterface
      */
-    public function pre(RequestInterface $request, array $options = []): CancellablePromiseInterface
-    {
+    public function pre(
+        RequestInterface $request,
+        string $transactionId,
+        array $options = []
+    ): CancellablePromiseInterface {
         if (!isset($options[self::class][Options::USERNAME])) {
             return resolve($request);
         }

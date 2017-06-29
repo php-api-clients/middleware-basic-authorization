@@ -2,11 +2,11 @@
 
 namespace ApiClients\Tests\Middleware\BasicAuthorization;
 
+use ApiClients\Middleware\BasicAuthorization\BasicAuthorizationHeaderMiddleware;
+use ApiClients\Middleware\BasicAuthorization\Options;
 use ApiClients\Tools\TestUtilities\TestCase;
 use React\EventLoop\Factory;
 use RingCentral\Psr7\Request;
-use ApiClients\Middleware\BasicAuthorization\BasicAuthorizationHeaderMiddleware;
-use ApiClients\Middleware\BasicAuthorization\Options;
 use function Clue\React\Block\await;
 
 final class BasicAuthorizationHeaderMiddlewareTest extends TestCase
@@ -67,7 +67,7 @@ final class BasicAuthorizationHeaderMiddlewareTest extends TestCase
     {
         $request = new Request('GET', 'https://example.com/');
         $middleware = new BasicAuthorizationHeaderMiddleware();
-        $changedRequest = await($middleware->pre($request, $options), Factory::create());
+        $changedRequest = await($middleware->pre($request, 'abc', $options), Factory::create());
 
         if ($hasHeader === false) {
             self::assertFalse($changedRequest->hasHeader('Authorization'));
