@@ -18,8 +18,8 @@ final class BasicAuthorizationHeaderMiddleware implements MiddlewareInterface
     use ErrorTrait;
 
     /**
-     * @param RequestInterface $request
-     * @param array $options
+     * @param  RequestInterface            $request
+     * @param  array                       $options
      * @return CancellablePromiseInterface
      */
     public function pre(
