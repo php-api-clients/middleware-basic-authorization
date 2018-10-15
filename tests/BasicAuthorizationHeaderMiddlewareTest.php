@@ -16,7 +16,7 @@ final class BasicAuthorizationHeaderMiddlewareTest extends TestCase
         yield [
             [],
             false,
-            ''
+            '',
         ];
 
         yield [
@@ -26,7 +26,7 @@ final class BasicAuthorizationHeaderMiddlewareTest extends TestCase
                 ],
             ],
             false,
-            ''
+            '',
         ];
 
         yield [
@@ -36,7 +36,7 @@ final class BasicAuthorizationHeaderMiddlewareTest extends TestCase
                 ],
             ],
             false,
-            ''
+            '',
         ];
 
         yield [
@@ -46,7 +46,7 @@ final class BasicAuthorizationHeaderMiddlewareTest extends TestCase
                 ],
             ],
             true,
-            'Basic a3Jva2V0Og=='
+            'Basic a3Jva2V0Og==',
         ];
         yield [
             [
@@ -56,7 +56,7 @@ final class BasicAuthorizationHeaderMiddlewareTest extends TestCase
                 ],
             ],
             true,
-            'Basic a3Jva2V0OnBhc3N3b3Jk'
+            'Basic a3Jva2V0OnBhc3N3b3Jk',
         ];
     }
 
@@ -71,6 +71,7 @@ final class BasicAuthorizationHeaderMiddlewareTest extends TestCase
 
         if ($hasHeader === false) {
             self::assertFalse($changedRequest->hasHeader('Authorization'));
+
             return;
         }
 
