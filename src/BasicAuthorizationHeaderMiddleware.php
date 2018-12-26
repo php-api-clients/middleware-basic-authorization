@@ -35,16 +35,16 @@ final class BasicAuthorizationHeaderMiddleware implements MiddlewareInterface
             return resolve($request);
         }
 
-        if (!array_key_exists(Options::PASSWORD, $options[self::class])) {
+        if (!\array_key_exists(Options::PASSWORD, $options[self::class])) {
             $options[self::class][Options::PASSWORD] = '';
         }
 
         return resolve(
             $request->withAddedHeader(
                 'Authorization',
-                sprintf(
+                \sprintf(
                     'Basic %s',
-                    base64_encode(
+                    \base64_encode(
                         $options[self::class][Options::USERNAME] . ':' .
                         $options[self::class][Options::PASSWORD]
                     )
