@@ -9,6 +9,9 @@ use React\EventLoop\Factory;
 use RingCentral\Psr7\Request;
 use function Clue\React\Block\await;
 
+/**
+ * @internal
+ */
 final class BasicAuthorizationHeaderMiddlewareTest extends TestCase
 {
     public function preProvider()
@@ -63,7 +66,7 @@ final class BasicAuthorizationHeaderMiddlewareTest extends TestCase
     /**
      * @dataProvider preProvider
      */
-    public function testPre(array $options, bool $hasHeader, string $expectedHeader)
+    public function testPre(array $options, bool $hasHeader, string $expectedHeader): void
     {
         $request = new Request('GET', 'https://example.com/');
         $middleware = new BasicAuthorizationHeaderMiddleware();
